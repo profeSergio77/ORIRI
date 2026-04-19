@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Oriri Empresa</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background-color: #ff7f2a;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 80px;
+            margin: 0;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container {
+            display: flex;
+            height: calc(100vh - 120px);
+        }
+
+        /* MENU LATERAL */
+        .menu {
+            width: 280px;
+            background-color: #febd5d;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu button {
+            background-color: #f95956;
+            border: 3px solid rgba(255, 4, 4, 0);
+            border-bottom: 20px solid rgba(255, 255, 255, 0);
+            padding: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .menu button:hover {
+            background-color: #ffb8b8;
+        }
+
+        /* AREA DE CONTENIDO */
+        .content {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 40px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="LogoORIRI.png" alt="Logo ORIRI">
+    </header>
+
+    <div class="container">
+
+        <!-- MENU LATERAL -->
+        <div class="menu">
+
+            <button onclick="mostrar('reglamento')">
+                Reglamento Interno de la empresa
+            </button>
+
+            <button onclick="mostrar('practicas')">
+                Practicas de desarrolladores
+            </button>
+
+            <button onclick="mostrar('rendimiento')">
+                Recomendaciones para un buen rendimiento en el trabajo
+            </button>
+
+            <button onclick="mostrar('empleados')">
+                Fichas de los empleados
+            </button>
+
+        </div>
+
+
+        <!-- AREA DONDE CAMBIA LA INFORMACION -->
+        <div class="content" id="contenido">
+
+            <h2>Bienvenido</h2>
+            <p>Seleccione una sección en el menú para visualizar la información.</p>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        function mostrar(seccion) {
+
+            let contenido = document.getElementById("contenido");
+
+            if (seccion === "reglamento") {
+                contenido.innerHTML = `
+<h2>Reglamento interno de la empresa</h2>
+
+<p>Normas internas de la Empresa.</p>
+
+<ul>
+<li>    <strong>     Articulo 1.</strong> Bajo ninguna circunstancia se tolerarán actos que falten al respeto. Cada individuo es legal y éticamente responsable de garantizar un lugar de trabajo seguro y ambientalmente responsable, sin excepciones.</li>
+<br>
+<li>    <strong>    Articulo 2. </strong> Toda comunicación debe ser respetuosa, clara y orientada al trabajo. Es responsabilidad de cada colaborador promover un diálogo digno, escuchar activamente a sus compañeros y resolver cualquier diferencia a través de los canales establecidos, priorizando siempre el bienestar del equipo.</li>
+<br>
+<li>    <strong>    Articulo 3. </strong> Absolutamente prohibido el uso de tabaco, vapeadores, alcohol y drogas, así como de toda sustancia que produzca alteración de la percepción de la realidad, capacidad de actuar y reaccionar dentro del horario laboral.</li>
+<br>
+<li>    <strong>    Articulo 4. </strong> Se prohíbe estrictamente emplear los dispositivos y recursos de la empresa para cualquier actividad que no sea estrictamente con fines profesionales. </li>
+<br>
+<li>    <strong>    Articulo 5. </strong> El personal tiene la obligación de cumplir con el horario de trabajo establecido por la organización. Toda falta de puntualidad o asistencia deberá ser comunicada de inmediato y justificada mediante la entrega del comprobante.</li>
+<br>
+<li>    <strong>    Articulo 6. </strong> Obligatorio el uso del uniforme completo (incluyendo la gabacha y el gafete debidamente puestos) durante toda la jornada laboral.</li>
+<br>
+<li>    <strong>    Articulo 7. </strong> Es responsabilidad de cada colaborador mantener la limpieza y el orden de su estación de trabajo y de las áreas comunes utilizadas. Al finalizar cada actividad o jornada, el espacio debe quedar libre de residuos y en condiciones óptimas para su uso inmediato por otros. </li>
+<br>
+<li>    <strong>    Articulo 8. </strong> El personal debe velar por la integridad de las herramientas y equipos asignados. Es obligatorio reportar cualquier falla de inmediato.</li>
+<br>
+<li>    <strong>    Articulo 9. </strong> El consumo de alimentos debe realizarse exclusivamente en los horarios y áreas asignadas.</li>
+<br>
+<li>    <strong>    Articulo 10.    </strong> El personal debe velar por la protección de la información corporativa en todo momento. Queda bajo responsabilidad del empleado el uso ético y discreto de las bases de datos y registros, asegurando que el acceso a la información sea exclusivo para fines laborales y dentro de los canales autorizados.</li>
+<br>
+</ul>
+
+
+
+`;
+
+
+            }
+
+
+            if (seccion === "practicas") {
+                contenido.innerHTML = `
+<h2>Buenas prácticas de desarrolladores</h2>
+
+<p>Ejemplos de prácticas recomendadas:</p>
+
+<ul>
+<li>Una de las cosas más importantes es escribir código que sea fácil de entender. 
+En vez de usar nombres raros o letras al azar es mejor usar palabras que expliquen lo que hace cada cosa. Así si otra persona ve el código puede entenderlo más rápido y no se confunde.</li>
+<br>
+<li>También es buena idea poner algunos comentarios en el código. Los comentarios sirven para explicar partes que tal vez no se entienden tan fácil. No hay que comentar todo pero sí lo que pueda causar dudas.</li>
+<br>
+<li>Otra práctica importante es probar el programa antes de entregarlo. Muchos errores pasan porque el desarrollador no revisó bien lo que hizo. Si pruebas el programa varias veces es más fácil encontrar fallas y arreglarlas antes de que alguien más las vea.</li>
+<br>
+<li>Los desarrolladores también tratan de mantener todo organizado. Eso significa separar el código en diferentes partes o archivos para que no quede todo mezclado. Cuando un proyecto crece mucho esto ayuda bastante a no perderse.</li>
+<br>
+</ul>
+`;
+            }
+
+
+            if (seccion === "rendimiento") {
+                contenido.innerHTML = `
+<h2>Recomendaciones para un buen rendimiento</h2>
+
+<ul>
+<li>Dedica los primeros 10 minutos del día a organizar tus tareas por orden de importancia.</li>
+<br>
+<li>Recuerda que el respeto no solo está en las palabras, sino también en los gestos y el tono de voz.</li>
+<br>
+<li>Durante la jornada, intenta limitar el uso del celular personal a tus tiempos de descanso.</li>
+<br>
+<li>Al terminar tu jornada, asegúrate de dejar tus pendientes cerrados o anotados para el día siguiente.</li>
+<br>
+<li>Antes de entregar una tarea o dar por terminado un proceso, realiza una revisión rápida final.</li>
+<br>
+<li>Aunque el área de trabajo sea abierta, evita interrumpir bruscamente a tus compañeros cuando están concentrados en una tarea delicada</li></ul>
+`;
+            }
+
+
+            if (seccion === "empleados") {
+                contenido.innerHTML = `
+<h2>Fichas de los empleados</h2>
+
+<h3> <strong > Direccion General </strong> </h3>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Sergio Marin Morales             </li>
+<li>    <strong>    Puesto: </strong> Dueño de la empresa             </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 19/07/1977          </li>
+<li>     <strong>   Contacto: </strong> sergio.marin@ctpcit.ed.cr     </li>
+
+</ul>       
+
+<h3> <strong > Direccion Ejecutiva </strong> </h3>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Mariana Monterrosa Vargas            </li>
+<li>    <strong>    Puesto: </strong> COO             </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 27/01/2009          </li>
+<li>     <strong>   Contacto: </strong> marianamonterrosavargas@gmail.com     </li>
+
+</ul>  
+
+<h3> <strong > Recursos Humanos </strong> </h3>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Julie Gutierrez Espinoza            </li>
+<li>    <strong>    Puesto: </strong> Gerente de Recursos Humanos             </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 04/09/2009          </li>
+<li>     <strong>   Contacto: </strong> Julie.gespinoza@gmail.com     </li>
+
+</ul>  
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Isabella Calvo Beeche            </li>
+<li>    <strong>    Puesto: </strong> Recursos Humanos             </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 11/08/2009          </li>
+<li>     <strong>   Contacto: </strong> Isabella.calvo.b@gmail.com     </li>
+
+</ul>  
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Ana Muñoz Carazo           </li>
+<li>    <strong>    Puesto: </strong> Recursos Humanos             </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 22/12/2007          </li>
+<li>     <strong>   Contacto: </strong> anamunozcarazo@gmail.com     </li>
+
+</ul>  
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Gloria Zuñiga Sanchez           </li>
+<li>    <strong>    Puesto: </strong> Recursos Humanos             </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 03/06/2009          </li>
+<li>     <strong>   Contacto: </strong> gloriazuniga748@gmail.com     </li>
+
+</ul>  
+
+<h3> <strong > Desarrollo </strong> </h3>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Gabriel Campos Cordero           </li>
+<li>    <strong>    Puesto: </strong> Gerente de Desarrollo            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 21/09/2009          </li>
+<li>     <strong>   Contacto: </strong> g4brielcampos2109@gmail.com     </li>
+
+</ul>  
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Sara Orozco Sanabria           </li>
+<li>    <strong>    Puesto: </strong> Desarrollo            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 03/05/2009          </li>
+<li>     <strong>   Contacto: </strong> sarao.sanabria@gmail.com     </li>
+
+</ul>  
+<ul>
+<li>    <strong>    Nombre: </strong>   Laura Esteban Rojas           </li>
+<li>    <strong>    Puesto: </strong> Desarrollo            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 04/09/2009          </li>
+<li>     <strong>   Contacto: </strong> lau.esteban.rojas@gmail.com     </li>
+
+</ul>  
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Gabriel Madrigal Barrantes          </li>
+<li>    <strong>    Puesto: </strong> Desarrollo            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 15/02/2009          </li>
+<li>     <strong>   Contacto: </strong> gabriel.madrigal.barrantes@ctpcit.ed.cr     </li>
+
+</ul>  
+
+<h3> <strong > Marketing </strong> </h3>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Fabiana Guzman Esquivel           </li>
+<li>    <strong>    Puesto: </strong> Gerente de Marketing            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 7/01/2009          </li>
+<li>     <strong>   Contacto: </strong> fabiana.esquivel09@gmail.com     </li>
+
+</ul>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Jaume Torner Carvajal           </li>
+<li>    <strong>    Puesto: </strong> Marketing            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 28/02/2009          </li>
+<li>     <strong>   Contacto: </strong> oblybionz@gmail.com     </li>
+
+</ul>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Genesis Jimenez Gutierrez           </li>
+<li>    <strong>    Puesto: </strong> Marketing            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 28/11/2008          </li>
+<li>     <strong>   Contacto: </strong> genesis.jimenez.guti@gmail.com     </li>
+
+</ul>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Abigail Gaitan Navarro           </li>
+<li>    <strong>    Puesto: </strong> Marketing            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 28/02/2009         </li>
+<li>     <strong>   Contacto: </strong> abi.gn08@gmail.com     </li>
+
+</ul>
+
+<h3> <strong > Soporte </strong> </h3>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Aaron Arias Gabelman           </li>
+<li>    <strong>    Puesto: </strong> Gerente de Soporte            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 19/02/2009          </li>
+<li>     <strong>   Contacto: </strong> adgabelman@gmail.com     </li>
+
+</ul>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Fernanda Juarez Salas          </li>
+<li>    <strong>    Puesto: </strong> Soporte            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 10/11/2009          </li>
+<li>     <strong>   Contacto: </strong> fernandajuarez1031@gmail.com     </li>
+
+</ul>
+
+<ul>
+<li>    <strong>    Nombre: </strong>   Maria Lourdes Melendez Cifuentes          </li>
+<li>    <strong>    Puesto: </strong> Soporte            </li>
+<li>     <strong>   Fecha de nacimiento: </strong> 15/07/2009          </li>
+<li>     <strong>   Contacto: </strong> ma.lourdes.melendezc@gmail.com     </li>
+
+</ul>
+
+`;
+            }
+
+        }
+
+
+    </script>
+    <div>
+        <img src="imagen1.jpeg" alt="Reglamento Imagen" style="width:300px; display:block; margin-bottom:20px;"></img>
+    </div>
+
+</body>
+
+</html>
